@@ -6,15 +6,15 @@ import project2 from "@/assets/project2.jpg";
 const projects = [
   {
     id: 1,
-    title: "Analytics Dashboard",
-    description: "A comprehensive analytics platform with real-time data visualization, interactive charts, and advanced reporting features.",
+    title: "ONLINE PLATFORM FOR INCLUSIVE DESIGN",
+    description: "An accessible web platform that helps create inclusive and user-friendly digital designs.",
     image: project1,
     tags: ["React", "TypeScript", "Chart.js"],
   },
   {
     id: 2,
-    title: "E-Commerce Platform",
-    description: "Modern e-commerce solution with seamless shopping experience, secure payment integration, and responsive design.",
+    title: "Cloud and Fog Environment using Data Integrity Audit",
+    description: "A secure cloud–fog system that ensures data integrity through continuous auditing.",
     image: project2,
     tags: ["Next.js", "Node.js", "Stripe"],
   },

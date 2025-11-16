@@ -35,7 +35,9 @@ const Hero = () => {
               className="mb-6"
             >
               <h1 className="text-6xl md:text-8xl font-black mb-2 leading-none">
-                <span className="block text-gradient">SANIDH</span>
+                <span className="block text-yellow-400 font-black italic tracking-widest drop-shadow-[0_0_10px_rgba(250,204,21,0.8)]">
+                  SANIDH
+                </span>
               </h1>
               <div className="w-24 h-1.5 bg-primary mt-4 mx-auto md:mx-0"></div>
             </motion.div>

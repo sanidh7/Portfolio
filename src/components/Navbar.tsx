@@ -21,9 +21,9 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass py-4" : "bg-transparent py-6"
-      }`}
+      className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+        isScrolled ? "backdrop-blur-xl bg-white/10 py-3" : "backdrop-blur-md bg-white/5 py-4"
+      } rounded-full border border-white/20 shadow-lg`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <motion.div
@@ -40,28 +40,18 @@ const Navbar = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="hidden md:flex gap-8"
+          className="hidden md:flex gap-6 px-6"
         >
-          {["services", "about", "portfolio", "testimonials", "contact"].map((item, index) => (
+          {["about", "services", "portfolio", "contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
-              className="text-foreground/80 hover:text-primary transition-colors capitalize text-sm font-medium"
+              className="text-foreground/90 hover:text-primary transition-colors capitalize text-sm font-semibold"
             >
               {item}
             </button>
           ))}
         </motion.div>
-
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          onClick={() => scrollToSection("contact")}
-          className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-medium hover:scale-105 transition-transform"
-        >
-          Contact
-        </motion.button>
       </div>
     </motion.nav>
   );
