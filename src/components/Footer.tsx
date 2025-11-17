@@ -47,10 +47,10 @@ const Footer = () => {
             transition={{ delay: 0.3 }}
             className="flex items-center gap-2 text-muted-foreground text-sm"
           >
-            <span>© 2025 SANIDH. All rights reserved.</span>
-            <span>•</span>
+            <span>© 2025 sanidh. All rights reserved.</span>
+            <span></span>
             <span className="flex items-center gap-1">
-              Made with <Heart className="w-4 h-4 text-primary fill-primary" /> and code
+              
             </span>
           </motion.div>
         </motion.div>

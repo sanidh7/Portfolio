@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Github } from "lucide-react";
-import project1 from "@/assets/project1.jpg";
-import project2 from "@/assets/project2.jpg";
+import project1 from "@/assets/project1.png";
+import project2 from "@/assets/project2.png";
 
 const projects = [
   {

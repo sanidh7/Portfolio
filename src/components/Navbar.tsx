@@ -21,11 +21,11 @@ const Navbar = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-5 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-xl bg-white/10 py-3" : "backdrop-blur-md bg-white/5 py-4"
-      } rounded-full border border-white/20 shadow-lg`}
+      className={`fixed top-2 left-0 right-0 z-50 flex justify-center transition-all duration-300`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div className={`w-[95%] max-w-6xl ${ 
+        isScrolled ? "backdrop-blur-xl bg-white/10 py-3" : "backdrop-blur-md bg-white/5 py-4"
+      } rounded-full border border-white/20 shadow-lg px-8 flex justify-between items-center`}>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -52,6 +52,12 @@ const Navbar = () => {
             </button>
           ))}
         </motion.div>
+          <button
+            onClick={() => scrollToSection("contact")}
+            className="ml-4 bg-primary text-black font-semibold py-2 px-4 rounded-full hover:bg-primary/80 transition-colors text-sm"
+          >
+            Let's Connect
+          </button>
       </div>
     </motion.nav>
   );
