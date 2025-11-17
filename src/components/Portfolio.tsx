@@ -9,14 +9,14 @@ const projects = [
     title: "ONLINE PLATFORM FOR INCLUSIVE DESIGN",
     description: "An accessible web platform that helps create inclusive and user-friendly digital designs.",
     image: project1,
-    tags: ["React", "TypeScript", "Chart.js"],
+    tags: ["HTML", "CSS", "JavaScript"],
   },
   {
     id: 2,
     title: "Cloud and Fog Environment using Data Integrity Audit",
     description: "A secure cloud–fog system that ensures data integrity through continuous auditing.",
     image: project2,
-    tags: ["Next.js", "Node.js", "Stripe"],
+    tags: ["JAVA", "NOSQL", "HTML"],
   },
 ];
 
