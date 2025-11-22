@@ -33,10 +33,10 @@ const Contact = () => {
 
     emailjs
       .send(
-        "service_qjsq8ov",          // Your Service ID
-        "template_7wpuitk",         // Your Template ID
+        "service_qjsq8ov",      // Your EmailJS Service ID
+        "template_7wpuitk",     // Your EmailJS Template ID
         formData,
-        "w2Pg-6CMUDXTky-67"           // Replace with your EmailJS public key
+        "w2Pg-6CMUDXTky-67"     // Your Public Key
       )
       .then(() => {
         toast({
@@ -136,7 +136,9 @@ const Contact = () => {
               className="w-full bg-primary text-primary-foreground hover:scale-105 transition-transform font-semibold py-6 text-lg"
             >
               {isSubmitting ? (
-                "Sending..."
+                <div className="flex justify-center w-full">
+                  <div className="animate-spin h-6 w-6 border-4 border-white border-t-transparent rounded-full"></div>
+                </div>
               ) : (
                 <>
                   Send Message
