@@ -5,30 +5,18 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const { toast } = useToast();
+
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    from_email: "",
     message: "",
   });
+
   const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for reaching out. I'll get back to you soon.",
-      });
-      setFormData({ name: "", email: "", message: "" });
-      setIsSubmitting(false);
-    }, 1000);
-  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -37,6 +25,37 @@ const Contact = () => {
       ...prev,
       [e.target.name]: e.target.value,
     }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    emailjs
+      .send(
+        "service_qjsq8ov",          // Your Service ID
+        "template_7wpuitk",         // Your Template ID
+        formData,
+        "w2Pg-6CMUDXTky-67"           // Replace with your EmailJS public key
+      )
+      .then(() => {
+        toast({
+          title: "Message sent!",
+          description: "Thank you for reaching out. I'll get back to you soon.",
+        });
+
+        setFormData({ from_name: "", from_email: "", message: "" });
+        setIsSubmitting(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        toast({
+          title: "Error",
+          description: "Failed to send message. Try again!",
+          variant: "destructive",
+        });
+        setIsSubmitting(false);
+      });
   };
 
   return (
@@ -65,13 +84,13 @@ const Contact = () => {
             className="space-y-6 glass p-8 rounded-xl"
           >
             <div>
-              <label htmlFor="name" className="block text-sm font-medium mb-2">
+              <label htmlFor="from_name" className="block text-sm font-medium mb-2">
                 Name
               </label>
               <Input
-                id="name"
-                name="name"
-                value={formData.name}
+                id="from_name"
+                name="from_name"
+                value={formData.from_name}
                 onChange={handleChange}
                 placeholder="Your name"
                 required
@@ -80,14 +99,14 @@ const Contact = () => {
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-2">
+              <label htmlFor="from_email" className="block text-sm font-medium mb-2">
                 Email
               </label>
               <Input
-                id="email"
-                name="email"
+                id="from_email"
+                name="from_email"
                 type="email"
-                value={formData.email}
+                value={formData.from_email}
                 onChange={handleChange}
                 placeholder="your.email@example.com"
                 required
