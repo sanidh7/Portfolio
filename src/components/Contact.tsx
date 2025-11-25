@@ -137,7 +137,7 @@ const Contact = () => {
             >
               {isSubmitting ? (
                 <div className="flex justify-center w-full">
-                  <div className="animate-spin h-6 w-6 border-4 border-white border-t-transparent rounded-full"></div>
+                  <div className="animate-spin h-6 w-6 border-4 border-yellow-500 border-t-transparent rounded-full"></div>
                 </div>
               ) : (
                 <>
