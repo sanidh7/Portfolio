@@ -33,7 +33,7 @@ const Navbar = () => {
           className="text-2xl font-bold text-gradient cursor-pointer"
           onClick={() => scrollToSection("hero")}
         >
-          SANIDH
+          SRI SANIDH
         </motion.div>
         
         <motion.div
