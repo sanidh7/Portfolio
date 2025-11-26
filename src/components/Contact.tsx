@@ -5,7 +5,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const { toast } = useToast();
@@ -135,16 +135,10 @@ const Contact = () => {
               disabled={isSubmitting}
               className="w-full bg-primary text-primary-foreground hover:scale-105 transition-transform font-semibold py-6 text-lg"
             >
-              {isSubmitting ? (
-                <div className="flex justify-center w-full">
-                  <div className="animate-spin h-6 w-6 border-4 border-white-500 border-t-transparent rounded-full"></div>
-                </div>
-              ) : (
-                <>
-                  Send Message
-                  <Send className="w-5 h-5 ml-2" />
-                </>
-              )}
+              <>
+                Send Message
+                <Send className="w-5 h-5 ml-2" />
+              </>
             </Button>
           </motion.form>
         </motion.div>
