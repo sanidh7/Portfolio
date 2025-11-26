@@ -77,23 +77,6 @@ const About = () => {
                 ))}
               </div>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.8 }}
-              className="pt-8 text-center md:text-left"
-            >
-              <a
-                href="/resume.pdf"
-                download="Sanidh_Resume.pdf"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:scale-105 transition-transform"
-              >
-                <Download className="w-5 h-5" />
-                Download Full Resume
-              </a>
-            </motion.div>
           </div>
         </motion.div>
       </div>
