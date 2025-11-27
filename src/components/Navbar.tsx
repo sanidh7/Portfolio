@@ -33,7 +33,7 @@ const Navbar = () => {
           className="text-2xl font-bold text-gradient cursor-pointer"
           onClick={() => scrollToSection("hero")}
         >
-          SANIDH
+          SRI SANIDH
         </motion.div>
         
         <motion.div
@@ -42,7 +42,7 @@ const Navbar = () => {
           transition={{ delay: 0.4 }}
           className="hidden md:flex gap-6 px-6"
         >
-          {["About", "Services", "Projects", "Contact"].map((item, index) => (
+          {["about", "services", "projects", "contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
