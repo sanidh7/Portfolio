@@ -42,7 +42,7 @@ const Navbar = () => {
           transition={{ delay: 0.4 }}
           className="hidden md:flex gap-6 px-6"
         >
-          {["about", "services", "Projects", "contact"].map((item, index) => (
+          {["about", "services", "projects", "contact"].map((item, index) => (
             <button
               key={item}
               onClick={() => scrollToSection(item)}
